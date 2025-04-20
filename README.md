@@ -7,7 +7,7 @@ A machine learning-powered web application that predicts whether drinking water 
 ---
 
 ## 🚀 Live Demo
-👉 [Click here to try the app](https://share.streamlit.io/your-username/water-potability-streamlit/main/app.py)
+👉 [Click here to try the app]([https://share.streamlit.io/your-username/water-potability-streamlit/main/app.py](https://safe-water-potability.streamlit.app/)
 
 ---
 
