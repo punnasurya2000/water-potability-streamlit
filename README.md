@@ -7,7 +7,7 @@ A machine learning-powered web application that predicts whether drinking water 
 ---
 
 ## 🚀 Live Demo
-👉 [Click here to try the app](https://share.streamlit.io/your-username/water-potability-streamlit/main/app.py)
+👉 [Click here to try the app]([applink](https://safe-water-potability.streamlit.app/)
 
 ---
 
@@ -16,6 +16,8 @@ The notebook evaluates multiple models:
 - Logistic Regression
 - Support Vector Machine (SVM) ✅ *Best performer*
 - Random Forest
+- XGBoost
+- K Nearest Neighbours
 
 The final app uses a tuned **SVM model with 92%+ accuracy**.
 
