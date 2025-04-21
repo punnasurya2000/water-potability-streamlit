@@ -1,31 +1,4 @@
-# import streamlit as st
-# import joblib
-# import numpy as np
 
-# # Load model and scaler
-# model = joblib.load("water_model.pkl")
-# scaler = joblib.load("scaler.pkl")
-
-# st.title("💧 Water Potability Predictor")
-# st.markdown("Enter the water quality parameters below to predict if the water is safe to drink.")
-
-# # Input fields
-# ph = st.number_input("pH")
-# hardness = st.number_input("Hardness")
-# solids = st.number_input("Solids")
-# chloramines = st.number_input("Chloramines")
-# sulfate = st.number_input("Sulfate")
-# conductivity = st.number_input("Conductivity")
-# organic_carbon = st.number_input("Organic Carbon")
-# trihalomethanes = st.number_input("Trihalomethanes")
-# turbidity = st.number_input("Turbidity")
-
-# if st.button("Predict Potability"):
-#     input_data = np.array([[ph, hardness, solids, chloramines, sulfate, conductivity,
-#                             organic_carbon, trihalomethanes, turbidity]])
-#     scaled = scaler.transform(input_data)
-#     result = model.predict(scaled)[0]
-#     st.success("✅ Potable Water" if result == 1 else "❌ Not Potable Water")
 import streamlit as st
 import joblib
 import numpy as np
@@ -77,6 +50,45 @@ if st.button("🚀 Predict Potability"):
     prediction = model.predict(scaled_input)[0]
     
     if prediction == 1:
-        st.success("✅ This water is **Potable** (Safe for drinking).")
+        # st.success("✅ This water is **Potable** (Safe for drinking).")
+                # POTABLE message (green with transparency)
+        st.markdown(
+            """
+            <div style='
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 16px;
+                border-radius: 10px;
+                font-size: 24px;
+                color: #004d00;
+                font-weight: bold;
+                text-align: center;
+                border: 2px solid #009933;
+            '>
+                ✅ This water is <b>Potable</b> (Safe for drinking).
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
     else:
-        st.error("❌ This water is **Not Potable** (Not safe for drinking).")
+        # st.error("❌ This water is **Not Potable** (Not safe for drinking).")
+        # NOT POTABLE message (red with transparency)
+        st.markdown(
+            """
+            <div style='
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 16px;
+                border-radius: 10px;
+                font-size: 18px;
+                color: #7f0000;
+                font-weight: bold;
+                text-align: center;
+                border: 2px solid #cc0000;
+            '>
+                ❌ This water is <b>Not Potable</b> (Not safe for drinking).
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+    # Footer
